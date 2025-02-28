@@ -56,7 +56,7 @@ void setup()
   pinMode(D7, OUTPUT);
   pinMode(D8, OUTPUT);
 
-  display.begin(0x3C, true); // Address 0x3D default
+  display.begin(0x3C, true); // Address 0x3C default
   //display.setContrast (0); // dim display
 
   display.display();
