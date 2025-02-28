@@ -56,7 +56,7 @@ void setup()
   pinMode(D7, OUTPUT);
   pinMode(D8, OUTPUT);
 
-  display.begin(0x3D, true); // Address 0x3D default
+  display.begin(0x3C, true); // Address 0x3D default
   //display.setContrast (0); // dim display
 
   display.display();
@@ -107,12 +107,17 @@ void display_update()
     display.setTextSize(2);             // Normal 1:1 pixel scale
     display.setTextColor(SH110X_WHITE);        // Draw white text
     display.setCursor(0, 0);            // Start at top-left corner
+    display.println("Air Quality");
     display.print("1.0: ");
-    display.println(data.PM_AE_UG_1_0);
+    display.print(data.PM_AE_UG_1_0);
+    display.println(" ug");
     display.print("2.5: ");
-    display.println(data.PM_AE_UG_2_5);
-    display.print("10: ");
-    display.println(data.PM_AE_UG_10_0);
+    display.print(data.PM_AE_UG_2_5);
+    display.println(" ug");
+    display.print(" 10: ");
+    display.print(data.PM_AE_UG_10_0);
+    display.println(" ug");
+    display.setTextSize(1);
     display.print("Temp : ");
     display.print(temp, 1);
     display.println(" C");
